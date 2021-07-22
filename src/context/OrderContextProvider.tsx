@@ -72,10 +72,17 @@ export function OrderContextProvider({children} : {children: ReactNode}) {
 
     function addItem(item: Item): void {
       setOrder(prevOrder => [...prevOrder, item]);
+      console.log(order);
     }
 
     function removeItem(id: number) {
-      setOrder(prevOrder => [...prevOrder.slice(0, id), ...prevOrder.slice(id+1)]);
+      console.log(order);
+      //this is broken
+     let i = order.findIndex( item => item.id === id);
+     console.log(i);
+
+
+      setOrder(prevOrder => [...prevOrder.slice(0, i), ...prevOrder.slice(i+1)]);
     }
 
     return (

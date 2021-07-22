@@ -44,7 +44,7 @@ function MenuList() {
             calories: 800,
           },
           {
-            id: 4,
+            id: 5,
             name: "Hash wrap",
             description:
               "Potato hash, smoked pork belly, egg, kale salad, bagna cauda sauce",
@@ -53,7 +53,7 @@ function MenuList() {
             calories: 875,
           },
           {
-            id: 5,
+            id: 6,
             name: "Cinnamon Roll",
             description:
               "Freshly baked rolls made from scratch topped with vanilla frosting",
@@ -62,7 +62,7 @@ function MenuList() {
             calories: 970,
           },
           {
-            id: 6,
+            id: 7,
             name: "Lox Bagel",
             description:
               "Smoked salmon, cream cheese and capers on top of a freshly baked sesame seed bagel",
@@ -86,10 +86,10 @@ function MenuList() {
             <div className="food">
                 { menu.map((item, id) => 
                     <MenuItem 
-                        key={item.id}
+                        key={`${item.id}-${item.name}`}
                         item={item}
                         onAdd={ () => handleAdd(item)}
-                        onRemove={ () => handleRemove}
+                        onRemove={ () => handleRemove(id)}
                     />
                 ) }
             </div>
