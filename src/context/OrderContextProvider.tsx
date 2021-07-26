@@ -78,7 +78,7 @@ export function OrderContextProvider({children} : {children: ReactNode}) {
     function removeItem(id: number) {
       console.log(order);
       //this is broken
-     let i = order.findIndex( item => item.id === id);
+     let i = order.findIndex( item => item.id);
      console.log(i);
 
 
